@@ -11,8 +11,6 @@ Este repositorio implementa el patrón `Result` en C#, una forma segura y expres
 - Propiedades `IsSuccess` y `IsFailure` facilitan la inspección rápida del estado del resultado.
 - Pruebas unitarias completas con xUnit para garantizar la confiabilidad del patrón.
 
-```
-
 ## 🧪 Pruebas incluidas
 
 Las pruebas cubren:
@@ -22,7 +20,7 @@ Las pruebas cubren:
 - ✅ Comportamiento de `Match` con funciones y acciones
 - ✅ Acceso seguro a `Value` y `Error` (con excepciones en estado incorrecto)
 
-## 🛠️ Ejemplo de uso
+## 🛠️ Ejemplos de uso
 
 ```csharp
 var result = Result<string, string>.Ok("Orden creada");
@@ -30,6 +28,15 @@ var result = Result<string, string>.Ok("Orden creada");
 var mensaje = result.Match(
     onSuccess: val => $"Éxito: {val}",
     onError: err => $"Error: {err}"
+);
+```
+
+```csharp
+var result = Result<string>.Fail("Falló la operación");
+
+result.Match(
+    onSuccess: () => Console.WriteLine("¡Éxito!"),
+    onError: r => Console.WriteLine($"Error: {r.ErrorMessage}")
 );
 ```
 
