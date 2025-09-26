@@ -3,8 +3,43 @@
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
+    <PackageId>MSMDotNet.Result</PackageId>
+    <Title>Result Pattern in C#</Title>
+    <Version>1.0.0</Version>
+    <Authors>Miguel Muñoz Serafín</Authors>
+    <Company>MSMDotNet</Company>
+    <Description>Una biblioteca .NET que implementa el patrón Result para manejar operaciones que pueden fallar sin recurrir a excepciones. Desarrollada durante el entrenamiento "Creación de APIs gRPC y REST en .NET con Clean Architecture".</Description>
+    <Copyright>Copyright © Miguel Muñoz Serafín 2025</Copyright>
+    <PackageProjectUrl>https://github.com/msmdotnet/result</PackageProjectUrl>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/msmdotnet/result</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Clean Architecture;Result Pattern</PackageTags>
+    <PackageReleaseNotes>Versión inicial 1.0.0:
+- Implementación del patrón Result en C#.
+- Incluye Result, Result&lt;T&gt;, y Result&lt;TSuccess,TError&gt;.
+- Métodos Match para manejar éxito y error de forma funcional y segura.
+- Propiedades IsSuccess e IsFailure para inspección rápida del estado.
+- Ejemplos de uso incluidos para escenarios simples y con invocación de funciones.
+- Pruebas unitarias completas con xUnit para garantizar confiabilidad.
+- Licencia MIT incluida.</PackageReleaseNotes>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
    
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\assets\icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Resources\Messages.Designer.cs">
